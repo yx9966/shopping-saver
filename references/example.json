@@ -1,0 +1,122 @@
+{
+  "needs": {
+    "a": 1,
+    "b": 1
+  },
+  "max_filler_cents": 1000,
+  "orders": [
+    {
+      "id": "a-alone",
+      "platform": "虚构平台（仅验算）",
+      "lines": [
+        {
+          "item": "a",
+          "quantity": 1,
+          "unit_cents": 18000,
+          "url": "https://example.invalid/a"
+        }
+      ],
+      "discounts": [],
+      "shipping_cents": 0,
+      "resources": [],
+      "evidence": {
+        "source": "https://example.invalid/synthetic-only",
+        "observed_at": "2026-10-13T11:00:00+08:00"
+      },
+      "valid_until": "2026-10-14T00:00:00+08:00"
+    },
+    {
+      "id": "b-alone",
+      "platform": "虚构平台（仅验算）",
+      "lines": [
+        {
+          "item": "b",
+          "quantity": 1,
+          "unit_cents": 9000,
+          "url": "https://example.invalid/b"
+        }
+      ],
+      "discounts": [],
+      "shipping_cents": 0,
+      "resources": [],
+      "evidence": {
+        "source": "https://example.invalid/synthetic-only",
+        "observed_at": "2026-10-13T11:00:00+08:00"
+      },
+      "valid_until": "2026-10-14T00:00:00+08:00"
+    },
+    {
+      "id": "combined",
+      "platform": "虚构平台（仅验算）",
+      "lines": [
+        {
+          "item": "a",
+          "quantity": 1,
+          "unit_cents": 19900,
+          "url": "https://example.invalid/a"
+        },
+        {
+          "item": "b",
+          "quantity": 1,
+          "unit_cents": 9900,
+          "url": "https://example.invalid/b"
+        }
+      ],
+      "discounts": [],
+      "shipping_cents": 0,
+      "resources": [],
+      "evidence": {
+        "source": "https://example.invalid/synthetic-only",
+        "observed_at": "2026-10-13T11:00:00+08:00"
+      },
+      "valid_until": "2026-10-14T00:00:00+08:00"
+    },
+    {
+      "id": "with-tissue",
+      "platform": "虚构平台（仅验算）",
+      "lines": [
+        {
+          "item": "a",
+          "quantity": 1,
+          "unit_cents": 19900,
+          "url": "https://example.invalid/a"
+        },
+        {
+          "item": "b",
+          "quantity": 1,
+          "unit_cents": 9900,
+          "url": "https://example.invalid/b"
+        },
+        {
+          "item": "tissue",
+          "quantity": 1,
+          "unit_cents": 500,
+          "url": "https://example.invalid/tissue"
+        }
+      ],
+      "discounts": [
+        {
+          "id": "synthetic-300-minus-50",
+          "items": [
+            "a",
+            "b",
+            "tissue"
+          ],
+          "basis": "original",
+          "threshold_cents": 30000,
+          "off_cents": 5000,
+          "repeat": false
+        }
+      ],
+      "shipping_cents": 0,
+      "resources": [
+        "synthetic:coupon-50"
+      ],
+      "evidence": {
+        "source": "https://example.invalid/synthetic-only",
+        "observed_at": "2026-10-13T11:00:00+08:00"
+      },
+      "valid_until": "2026-10-14T00:00:00+08:00"
+    }
+  ]
+}
